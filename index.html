@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Statistics Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>CRM Statistics Dashboard</h1>
+            <div class="time-selector">
+                <label for="time-range">Filter by Time:</label>
+                <select id="time-range" onchange="fetchData()">
+                    <option value="1_day">1 Day</option>
+                    <option value="1_week">1 Week</option>
+                    <option value="1_month">1 Month</option>
+                    <option value="1_year">1 Year</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Summary Cards -->
+        <section class="stats-cards">
+            <div class="card" id="sales-card">
+                <h3>Total Sales</h3>
+                <p id="total-sales">Loading...</p>
+            </div>
+            <div class="card" id="customers-card">
+                <h3>New Customers</h3>
+                <p id="new-customers">Loading...</p>
+            </div>
+            <div class="card" id="conversion-card">
+                <h3>Conversion Rate</h3>
+                <p id="conversion-rate">Loading...</p>
+            </div>
+        </section>
+
+        <!-- Pie Chart -->
+        <section class="chart-container">
+            <h2>Sales Distribution by Category</h2>
+            <canvas id="sales-pie-chart"></canvas>
+        </section>
+
+        <!-- Line Chart -->
+        <section class="chart-container">
+            <h2>Sales Over Time</h2>
+            <canvas id="sales-line-chart"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>CRM Dashboard &copy; 2024</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
